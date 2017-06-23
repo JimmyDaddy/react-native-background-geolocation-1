@@ -1,3 +1,16 @@
+/**
+ * @Author: jimmydaddy
+ * @Date:   2017-06-23 06:52:46
+ * @Email:  heyjimmygo@gmail.com
+ * @Filename: LocationProviderFactory.java
+ * @Last modified by:   jimmydaddy
+ * @Last modified time: 2017-06-23 07:00:20
+ * @License: GNU General Public License（GPL)
+ * @Copyright: ©2015-2017 www.songxiaocai.com 宋小菜 All Rights Reserved.
+ */
+
+
+
 /*
 According to apache license
 
@@ -36,8 +49,13 @@ public class LocationProviderFactory {
             case Config.ANDROID_ACTIVITY_PROVIDER:
                 provider = new ActivityRecognitionLocationProvider(context);
                 break;
+            case Config.TIMER_PROVIDE:
+                Log.e("LocationProviderFactory", "getInstance: TIMER_PROVIDE");
+                provider = new TimeTaskLocationProvider(context);
+                break;
             default:
-                throw new IllegalArgumentException("Provider not found");
+                Log.e("LocationProviderFactory", "getInstance: TIMER_PROVIDE DEFAULT");
+                provider = new TimeTaskLocationProvider(context);
         }
 
         provider.onCreate();

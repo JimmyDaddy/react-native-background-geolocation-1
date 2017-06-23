@@ -1,3 +1,16 @@
+/**
+ * @Author: jimmydaddy
+ * @Date:   2017-06-23 06:53:07
+ * @Email:  heyjimmygo@gmail.com
+ * @Filename: Config.java
+ * @Last modified by:   jimmydaddy
+ * @Last modified time: 2017-06-23 06:59:27
+ * @License: GNU General Public License（GPL)
+ * @Copyright: ©2015-2017 www.songxiaocai.com 宋小菜 All Rights Reserved.
+ */
+
+
+
 /*
 According to apache license
 
@@ -29,6 +42,7 @@ public class Config implements Parcelable
 {
     public static final int ANDROID_DISTANCE_FILTER_PROVIDER = 0;
     public static final int ANDROID_ACTIVITY_PROVIDER = 1;
+    public static final int TIMER_PROVIDE = 2;
 
     // actual values should be read from strings.xml
     public static final String ACCOUNT_TYPE_RESOURCE = "account_type";
