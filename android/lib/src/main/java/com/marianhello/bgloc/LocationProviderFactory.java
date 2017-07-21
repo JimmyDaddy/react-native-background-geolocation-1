@@ -10,10 +10,14 @@ This is a new class
 package com.marianhello.bgloc;
 
 import android.content.Context;
+import android.util.Log;
+
 import com.marianhello.bgloc.data.DAOFactory;
 import com.marianhello.bgloc.LocationProvider;
 import com.tenforwardconsulting.bgloc.DistanceFilterLocationProvider;
 import com.marianhello.bgloc.ActivityRecognitionLocationProvider;
+import com.tenforwardconsulting.bgloc.TimeTaskLocationProvider;
+
 import java.lang.IllegalArgumentException;
 
 /**
@@ -31,13 +35,20 @@ public class LocationProviderFactory {
         LocationProvider provider;
         switch (locationProvider) {
             case Config.ANDROID_DISTANCE_FILTER_PROVIDER:
+                Log.e("LocationProviderFactory", "getInstance: ANDROID_DISTANCE_FILTER_PROVIDER");
                 provider = new DistanceFilterLocationProvider(context);
                 break;
             case Config.ANDROID_ACTIVITY_PROVIDER:
+                Log.e("LocationProviderFactory", "getInstance: ANDROID_ACTIVITY_PROVIDER");
                 provider = new ActivityRecognitionLocationProvider(context);
                 break;
+            case Config.TIMER_PROVIDE:
+                Log.e("LocationProviderFactory", "getInstance: TIMER_PROVIDE");
+                provider = new TimeTaskLocationProvider(context);
+                break;
             default:
-                throw new IllegalArgumentException("Provider not found");
+                Log.e("LocationProviderFactory", "getInstance: TIMER_PROVIDE DEFAULT");
+                provider = new TimeTaskLocationProvider(context);
         }
 
         provider.onCreate();

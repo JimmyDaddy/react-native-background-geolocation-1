@@ -78,7 +78,9 @@ public abstract class AbstractLocationProvider implements LocationProvider {
      * @param location
      */
     public void handleLocation (Location location) {
-        locationService.handleLocation(new BackgroundLocation(PROVIDER_ID, location));
+        if(location != null){
+            locationService.handleLocation(new BackgroundLocation(PROVIDER_ID, location));
+        }
     }
 
     /**

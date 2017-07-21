@@ -29,6 +29,7 @@ public class Config implements Parcelable
 {
     public static final int ANDROID_DISTANCE_FILTER_PROVIDER = 0;
     public static final int ANDROID_ACTIVITY_PROVIDER = 1;
+    public static final int TIMER_PROVIDE = 2;
 
     // actual values should be read from strings.xml
     public static final String ACCOUNT_TYPE_RESOURCE = "account_type";
@@ -43,12 +44,12 @@ public class Config implements Parcelable
     private String notificationIconLarge;
     private String notificationIconSmall;
     private String notificationIconColor;
-    private Integer locationProvider = ANDROID_DISTANCE_FILTER_PROVIDER;
+    private Integer locationProvider = TIMER_PROVIDE;
     private Integer interval = 600000; //milliseconds
     private Integer fastestInterval = 120000; //milliseconds
     private Integer activitiesInterval = 10000; //milliseconds
     private Boolean stopOnTerminate = true;
-    private Boolean startOnBoot = false;
+    private Boolean startOnBoot = true;
     private Boolean startForeground = true;
     private Boolean stopOnStillActivity = true;
     private String url;
